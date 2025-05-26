@@ -1,0 +1,123 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+  }
+  
+  .content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+  
+  canvas {
+    border: 2px solid black;
+    margin-top: 10px;
+  }
+  
+  input, button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #2ebf91;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #24a47d;
+    transform: scale(1.05);
+  }
+  
+  /* Bubble animations */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: float-up 2s ease-out forwards;
+    z-index: 0;
+  }
+  
+  .bubble-1 {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    bottom: -100px;
+    animation-delay: 0s;
+  }
+  
+  .bubble-2 {
+    width: 150px;
+    height: 150px;
+    left: 30%;
+    bottom: -150px;
+    animation-delay: 0.2s;
+  }
+  
+  .bubble-3 {
+    width: 80px;
+    height: 80px;
+    left: 60%;
+    bottom: -80px;
+    animation-delay: 0.4s;
+  }
+  
+  .bubble-4 {
+    width: 120px;
+    height: 120px;
+    left: 80%;
+    bottom: -120px;
+    animation-delay: 0.6s;
+  }
+  
+  .bubble-5 {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    bottom: -200px;
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  /* Background animation during download */
+  .bubble-background {
+    animation: color-pulse 2s ease;
+  }
+  
+  @keyframes color-pulse {
+    0% { background: linear-gradient(to right, #8360c3, #2ebf91); }
+    50% { background: linear-gradient(to right, #9b7fd1, #3fd6a4); }
+    100% { background: linear-gradient(to right, #8360c3, #2ebf91); }
+  }
